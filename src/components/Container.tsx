@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import styled from 'styled-components';
-import { ColorScheme, Size } from '../constants/System';
-import Button from './Button';
+import { ColorScheme, Direction } from '../constants/System';
 
-export interface ContainerProps {
-	scheme?: ColorScheme;
+export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
+	scheme: ColorScheme;
+	direction: Direction;
 }
 
-export default function Container(props: ContainerProps) {
+export default function Container(props: Partial<ContainerProps>) {
 	return (
-		<StyledContainer scheme={props.scheme || ColorScheme.DEFAULT}>
-			<NewButton>Button Test</NewButton>
-		</StyledContainer>
+		<StyledContainer
+			{...props}
+			scheme={props.scheme || ColorScheme.DEFAULT}
+			direction={props.direction || Direction.ROW}
+		/>
 	);
 }
 
-const NewButton = styled(Button)`
-	background-color: purple;
+const StyledContainer = styled.div<ContainerProps>`
+	position: relative;
+	min-height: 100%;
+	min-width: 100%;
+	background-color: ${(props) => props.theme.schemes[props.scheme].main};
+	display: flex;
+	flex-direction: ${(props) => (props.direction === Direction.COLUMN ? 'column' : 'row')};
+	align-items: flex-start;
 `;
-
-interface StyledContainerProps {
-	scheme: ColorScheme;
-}
-
-const StyledContainer = styled.div<StyledContainerProps>``;

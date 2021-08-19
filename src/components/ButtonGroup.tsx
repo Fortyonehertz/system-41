@@ -1,6 +1,6 @@
 import React, { HTMLAttributes, ReactNode } from 'react';
 import styled from 'styled-components';
-import { Size, Variant, ColorScheme } from '../constants/System';
+import { Scale, Variant, ColorScheme } from '../constants/System';
 import { Spacing } from '../constants/Scale';
 import Button, { ButtonProps } from './Button';
 import { v4 as uuid4 } from 'uuid';
@@ -11,7 +11,7 @@ interface ChildButtonProps extends ButtonProps {
 
 export interface ButtonGroupProps extends HTMLAttributes<HTMLDivElement> {
 	buttons: Partial<ChildButtonProps>[];
-	size?: Size;
+	scale?: Scale;
 	variant?: Variant;
 	scheme?: ColorScheme;
 	className?: string;
@@ -21,7 +21,7 @@ export default function ButtonGroup(props: ButtonGroupProps) {
 	return (
 		<StyledButtonGroup
 			{...props}
-			size={props.size || Size.SMALL}
+			scale={props.scale || Scale.SMALL}
 			variant={props.variant || Variant.CLOSED}
 			scheme={props.scheme || ColorScheme.DEFAULT}
 		>
@@ -37,7 +37,7 @@ export default function ButtonGroup(props: ButtonGroupProps) {
 }
 
 interface StyledButtonGroupProps {
-	size: Size;
+	scale: Scale;
 	variant: Variant;
 	scheme: ColorScheme;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button, { ButtonProps } from '../components/Button';
-import { Size } from '../constants/System';
+import { Scale } from '../constants/System';
 import ThemeDecorator from './ThemeDecorator';
 
 export default {
@@ -14,18 +14,18 @@ const Template: ComponentStory<typeof Button> = (args: Partial<ButtonProps>) => 
 
 export const Small = Template.bind({});
 Small.args = {
-	size: Size.SMALL,
+	scale: Scale.SMALL,
 	children: 'Small',
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
-	size: Size.MEDIUM,
+	scale: Scale.MEDIUM,
 	children: 'Medium',
 };
 
 export const Large = Template.bind({});
 Large.args = {
-	size: Size.LARGE,
+	scale: Scale.LARGE,
 	children: 'Large',
 };

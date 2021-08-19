@@ -1,10 +1,10 @@
-export enum Size {
+export enum Scale {
 	SMALL = 'small',
 	MEDIUM = 'medium',
 	LARGE = 'large',
 }
 
-export type SizeOptions<T> = Record<Size, T>;
+export type ScaleOptions<T> = Record<Scale, T>;
 
 export enum ColorScheme {
 	DEFAULT = 'DEFAULT',
@@ -30,4 +30,9 @@ export enum Placement {
 	BOTTOM,
 	LEFT,
 	RIGHT,
+}
+
+export enum Direction {
+	ROW,
+	COLUMN,
 }
