@@ -7,7 +7,7 @@ export interface ITheme {
 export const defaultTheme: ITheme = {
 	schemes: {
 		DEFAULT: {
-			main: 'grey',
+			main: 'gray',
 		},
 		PRIMARY: {
 			main: 'white',

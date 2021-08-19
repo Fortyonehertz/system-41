@@ -1,0 +1,50 @@
+{
+	// Place your system-41 workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	"Print to console": {
+		"scope": "javascript,typescript,typescriptreact",
+		"prefix": "beans",
+		"body": ["console.log('$1');", "$2"],
+		"description": "Roflstomp"
+	},
+	"New System-41 ReactFC Component": {
+		"scope": "typescriptreact",
+		"prefix": "sfc",
+		"body": [
+			"import React, { ReactNode } from 'react';",
+			"import styled from 'styled-components';",
+			"import { Size, Variant, ColorScheme } from '../constants/System';",
+			"export interface $1Props {",
+			"\tsize?: Size;",
+			"\tvariant?: Variant;",
+			"\tscheme?: ColorScheme;",
+			"\tchildren?: ReactNode;",
+			"\tclassName?: string;",
+			"}",
+			"",
+			"export default function $1(props: $1Props) {",
+			"\treturn (",
+			"\t\t<Styled$1",
+			"\t\t\tsize={props.size || Size.SMALL}",
+			"\t\t\tvariant={props.variant || Variant.CLOSED}",
+			"\t\t\tscheme={props.scheme || ColorScheme.DEFAULT}",
+			"\t\t\tclassName={props.className}",
+			"\t\t></Styled$1>",
+			"\t);",
+			"}",
+			"",
+			"interface Styled$1Props {",
+			"\tsize: Size;",
+			"\tvariant: Variant;",
+			"\tscheme: ColorScheme;",
+			"}",
+			"",
+			"const Styled$1 = styled.div<Styled$1Props>``;\n"
+		]
+	}
+}
