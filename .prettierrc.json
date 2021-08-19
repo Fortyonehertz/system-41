@@ -1,7 +1,8 @@
 {
-	"trailingComma": "es5",
-	"tabWidth": 20,
-	"useTabs": true,
 	"semi": true,
-	"singleQuote": true
+	"trailingComma": "all",
+	"singleQuote": true,
+	"printWidth": 120,
+	"tabWidth": 4,
+	"useTabs": true
 }
